@@ -47,7 +47,9 @@ def play(my_songs)
     #if response.to_i.between?(1,songs.length) && response.to_i != 0
     #  puts "Playing #{songs[response.to_i - 1]}"
     if my_songs.has_key?(response)
-      puts "Playing #{system 'open my_songs[response]'}"
+      puts "Now playing #{response}"
+      system 'open ' << my_songs[response]
+      #puts "Playing #{system 'open my_songs["response"]'}"
       #binding.pry
     else
       puts "Invalid input, please try again"
